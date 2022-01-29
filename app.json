@@ -1,0 +1,9 @@
+{
+
+  "expo":{
+     "appKey":"CryptocurrencyApp",
+  },
+  
+  "name": "CryptocurrencyApp",
+  "displayName": "CryptocurrencyApp"
+}
