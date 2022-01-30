@@ -2,6 +2,12 @@
 
   "expo":{
      "appKey":"CryptocurrencyApp",
+
+     "splash": {
+          "image": "./assets/images/splash/android/drawable-hdpi/launch_screen.png",
+          "backgroundColor": "#FEF9B0",
+          "resizeMode": "cover"
+     }
   },
   
   "name": "CryptocurrencyApp",
