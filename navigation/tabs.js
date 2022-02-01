@@ -36,8 +36,6 @@ const TabBarCustomButton = ({ children, onPress}) => {
         >
             {children}
         </LinearGradient>
-        
-        
         </TouchableOpacity>
     
     
@@ -57,10 +55,10 @@ const Tabs = () => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    elevation: 0.5,
+                    elevation: 0.1,
                     backgroudColor: COLORS.white,
                     borderTopColor: "transparent",
-                    height: 100
+                    height: 90
                 }
             
             }}
@@ -78,7 +76,7 @@ const Tabs = () => {
                             resizeMode = "contain"
                             style = {{
                                 width: 30,
-                                haight: 30,
+                                height: 30,
                                 tintColor: focused ? COLORS.primary : COLORS.black
                             }}
                         />
@@ -99,7 +97,7 @@ const Tabs = () => {
                             resizeMode = "contain"
                             style = {{
                                 width: 30,
-                                haight: 30,
+                                height: 30,
                                 tintColor: focused ? COLORS.primary : COLORS.black
                             }}
                         />
@@ -115,14 +113,15 @@ const Tabs = () => {
                     tabBarIcon: ({focused}) => (
                         
                         <Image 
-                            source = {icons.transanction}
+                            source = {icons.transaction}
                             resizeMode = "contain"
                             style = {{
                                 width: 30,
-                                haight: 30,
+                                height: 30,
                                 tintColor: focused ? COLORS.primary : COLORS.black
                             }}
-                        />   
+                        />
+                      
                     ),
                     tabBarButton: (props) => (
                         <TabBarCustomButton 

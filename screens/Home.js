@@ -1,21 +1,105 @@
 import React from 'react';
 import {
     StyleSheet,
+    ScrollView,
+    Image,
+    ImageBackground,
+    FlatList,
     View,
     Text,
     TouchableOpacity
 } from 'react-native';
 
+import { dummyData, COLORS, SIZES, FONTS, icons, images } from "../constants"
+
 const Home = ({ navigation }) => {
-    return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-            <TouchableOpacity
-                onPress={() => navigation.navigate("CryptoDetail")}
+
+
+    function renderHeader(){
+        return (
+            <View
+                style ={{
+                    width: "100%",
+                    height: 290,
+                    ...styles.shadow
+                }}
+
             >
-                <Text>Navigate to CryptoDetail</Text>
-            </TouchableOpacity>
-        </View>
+                <ImageBackground
+                    source ={images.banner}
+                    resizeMode = "cover"
+                    style ={{
+                        flex: 1,
+                        alignItems: 'center'
+                    }}
+                >
+                    {/* Header Bar */}
+                    <View
+                        style = {{
+                            marginTop: SIZES.padding * 2,
+                            width: "100%",
+                            alignItems: "flex-end",
+                            paddingHorizontal: SIZES.padding
+                        }}
+                    >
+                        <TouchableOpacity
+                            style ={{
+                                width: 35,
+                                height: 35,
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                            onPress = {() => console.log("Notification on pressed")}
+                        >
+                            <Image
+                                source = {icons.notification_white}
+                                resizeMode = "contain"
+                                style = {{ flex: 1 }}
+                            />
+                        </TouchableOpacity>
+
+                    </View>
+                    {/* Baalance */}
+                    <View
+                        style = {{
+                            alignItems: 'center',
+                            justifyContent:'center'
+                        }}
+                     >
+                       <Text style={{color: COLORS.white, ...FONTS.h3}}>Your Portfolio Balace</Text>
+                       <Text
+                           style ={{
+                              marginTop: SIZES.base, color: COLORS.white, ...FONTS.h1
+                           }}
+                       >${dummyData.portfolio.balance}</Text>
+                       <Text
+                        style ={{
+                            color: COLORS.white, ...FONTS.body5
+                        }}
+                        >{dummyData.portfolio.changes} Last 24 hours</Text>
+
+                    </View>
+                </ImageBackground>
+
+
+
+          </View>
+
+        )
+
+
+    }
+    return (
+        <ScrollView>
+          <View
+             style ={{
+                 flex: 1,
+                 paddingBottom:110
+             }}
+           >
+              {renderHeader()}
+          </View>
+        </ScrollView>
     )
 }
 
