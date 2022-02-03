@@ -11,10 +11,10 @@ import {
 } from 'react-native';
 
 import { dummyData, COLORS, SIZES, FONTS, icons, images } from "../constants"
-import {PriceAlert, TransactionHistory} from "../components";
+import {PriceAlert} from "../components";
 const Home = ({ navigation }) => {
     const [trending, setTrending] = React.useState(dummyData.trendingCurrencies)
-const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.transactionHistory)
+const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.transanctionHistory)
 
     function renderHeader(){
 
@@ -185,7 +185,7 @@ const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.t
             >
                 <Text style={{color: COLORS.white, ...FONTS.h3}}>Investing Safety</Text>
                 <Text
-                    style ={{marginTop: SIZES.base, color:COLORS.white, ...FONTS.body4, lineHeight:18}}
+                    style ={{marginTop: SIZES.base, color.COLORS.white, ...FONTS.body4, lineHeight:18}}
                 >Its very difficult to time an investment, especially when the market is volatile, learn  how to use dollar cost avaraging to your advantage</Text>
                 <TouchableOpacity
                     style={{
@@ -196,7 +196,7 @@ const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.t
                 >
                     <Text
                         style={{
-                            textDecorationLine: "underline",
+                            textDecorationLine: "underline"
                             color: COLORS.green, ...FONTS.h3
                         
                         }}
@@ -206,21 +206,6 @@ const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.t
             </View>
         )
     }
-    
-    function renderTransactionHistory(){
-        return (
-            <TransactionHistory 
-                customContainerStyle={{...styles.shadow}}
-                history = {TransactionHistory}
-            
-            
-            />
-        
-        
-        )
-    
-    }
-    
     return (
         <ScrollView>
           <View
@@ -232,7 +217,6 @@ const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.t
               {renderHeader()}
               {renderAlert()}
               {renderNotice()}
-              {renderTransactionHistory()}
           </View>
         </ScrollView>
     )

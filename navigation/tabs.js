@@ -55,10 +55,10 @@ const Tabs = () => {
                     bottom: 0,
                     left: 0,
                     right: 0,
-                    elevation: 0.1,
+                    elevation: 0,
                     backgroudColor: COLORS.white,
                     borderTopColor: "transparent",
-                    height: 90
+                    height: 65
                 }
             
             }}
