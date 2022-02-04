@@ -7,15 +7,20 @@ import {
     FlatList,
     View,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    LogBox
 } from 'react-native';
 
 import { dummyData, COLORS, SIZES, FONTS, icons, images } from "../constants"
 import {PriceAlert, TransactionHistory} from "../components";
+
 const Home = ({ navigation }) => {
     const [trending, setTrending] = React.useState(dummyData.trendingCurrencies)
-const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.transactionHistory)
+    const [transactionHistory, setTransactionHistory] = React.useState(dummyData.transactionHistory)
+    React.useEffect(() => {
+        LogBox.ignoreLogs(['virtualizedLists should never be nesteed'])
 
+    }, [])
     function renderHeader(){
 
         const renderItem = ({item , index }) => (
@@ -211,7 +216,7 @@ const [transanctionHistory, setTransanctionHistory] = React.useState(dummyData.t
         return (
             <TransactionHistory 
                 customContainerStyle={{...styles.shadow}}
-                history = {TransactionHistory}
+                history = {transactionHistory}
             
             
             />
