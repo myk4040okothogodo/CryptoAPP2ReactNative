@@ -1,4 +1,5 @@
 import React from 'react';
+import {  SafeAreaView } from 'react-native-safe-area-context';
 import {
     StyleSheet,
     View,
@@ -7,7 +8,7 @@ import {
     Image,
     ScrollView,
     Animated,
-    SafeAreaView
+    //SafeAreaView
 } from 'react-native';
 
 import {dummyData, COLORS, SIZES, FONTS, icons} from "../constants";
@@ -27,7 +28,7 @@ const CryptoDetail = ({ route, navigation }) => {
 
     },[])
     
-    function optionOnclickHandler(option) {
+    function optionOnClickHandler(option) {
         setSelectedOption(option)
 
     }
@@ -160,7 +161,7 @@ const CryptoDetail = ({ route, navigation }) => {
                   <VictoryChart
                       theme = {VictoryCustomTheme}
                       height = {220}
-                      width = {SIZES.width - 40}
+                      width = {SIZES.width - 20}
                    >
                         <VictoryLine
                               style ={{
@@ -279,7 +280,7 @@ const CryptoDetail = ({ route, navigation }) => {
                      }}>
                          <CurrencyLabel
                             icon = {selectedCurrency?.image}
-                            currency = {'${selectedCurrency?.currency} wallet'}
+                            currency = {`${selectedCurrency?.currency} wallet`}
                             code = {selectedCurrency?.code}
                           />
                      </View>
@@ -310,7 +311,7 @@ const CryptoDetail = ({ route, navigation }) => {
                 </View>
                 <TextButton 
                     label="Buy"
-                    onPress ={() => navigation.navigate("Transanction", {currency: selectedCurrency})}
+                    onPress ={() => navigation.navigate("Transaction", {currency: selectedCurrency})}
                 />
             </View>
         )

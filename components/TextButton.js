@@ -3,9 +3,9 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
-import {COLORS, SIZES, FONTS} from "../constnts"
+import {COLORS, SIZES, FONTS} from "../constants"
 
-const TextButton =({ label, customContainerStyle, customLabelStyle, onPress })
+const TextButton =({ label, customContainerStyle, customLabelStyle, onPress }) => {
     return (
         <TouchableOpacity
             style={{
